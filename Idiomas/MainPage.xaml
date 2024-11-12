@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Idiomas.MainPage"
+             >
+
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Start" >
+
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+          ColumnDefinitions="*, *,*" Padding="20" >
+
+            <!-- Header -->
+            <Label Grid.Row="0" Grid.ColumnSpan="3"
+               Text="Nivel de idiomas"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="0,10"/>
+
+            <!-- Subheader -->
+            <Label Grid.Row="1" Grid.ColumnSpan="3"
+               Text="B: bajo, M: medio, A: alto"
+               FontSize="Medium"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="0,5"/>
+
+            <!-- Nivel de valenciano -->
+            <Label Grid.Row="2" Grid.Column="0"
+               Text="Nivel de valenciano [B,M,A]"
+               VerticalOptions="Center"
+                   />
+
+            <!-- Indicador A -->
+            <Grid Grid.Row="2" Grid.Column="1" WidthRequest="30" HeightRequest="30">
+                <BoxView Color="LightGreen"/>
+                <Label Text="A" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+
+            <Button Grid.Row="2" Grid.Column="2"
+                Text="Insertar"
+                BackgroundColor="Purple" 
+                TextColor="White"
+                    Padding="5" Margin="5"/>
+
+            <!-- Nivel de inglés -->
+            <Label Grid.Row="3" Grid.Column="0"
+               Text="Nivel de inglés [B,M,A]"
+               VerticalOptions="Center"/>
+
+            <!-- Indicador B -->
+            <Grid Grid.Row="3" Grid.Column="1" WidthRequest="30" HeightRequest="30">
+                <BoxView Color="Red"/>
+                <Label Text="B" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+
+            <Button Grid.Row="3" Grid.Column="2"
+                Text="Insertar"
+                BackgroundColor="Purple"
+                TextColor="White"
+                Padding="5" Margin="5"/>
+
+            <!-- Nivel de francés -->
+            <Label Grid.Row="4" Grid.Column="0"
+               Text="Nivel de francés [B,M,A]"
+               VerticalOptions="Center"/>
+
+            <!-- Indicador M -->
+            <Grid Grid.Row="4" Grid.Column="1" WidthRequest="30" HeightRequest="30">
+                <BoxView Color="Orange"/>
+                <Label Text="M" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+
+            <Button Grid.Row="4" Grid.Column="2"
+                Text="Insertar"
+                BackgroundColor="Purple"
+                TextColor="White"
+                Padding="5" Margin="5"/>
+
+            <!-- Botón Comprobar -->
+            <Button Grid.Row="5" Grid.ColumnSpan="3"
+                Text="Comprobar"
+                BackgroundColor="Purple"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="20"/>
+            
+            <!-- Niveles avanzados -->
+            <Button Grid.Row="6" Grid.Column="0"
+            Text="Avanzado 1"
+            BackgroundColor="LightGray"
+            TextColor="Black"
+            HorizontalOptions="Center"
+                    />
+
+            <Button Grid.Row="6" Grid.Column="1"
+            Text="Avanzado 2"
+            BackgroundColor="LightGray"
+            TextColor="Black"
+            HorizontalOptions="Center"
+            Margin="0,0,20,0"/> <!-- Margen derecho -->
+
+
+            <Button Grid.Row="6" Grid.Column="2"
+            Text="Avanzado 3"
+            BackgroundColor="LightGray"
+            TextColor="Black"
+            HorizontalOptions="Center"/>
+
+
+            <!-- Texto de nivel avanzado -->
+            <Label Grid.Row="7" Grid.ColumnSpan="3"
+               Text="Idiomas a nivel avanzado = 3"
+               FontSize="Medium"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Padding="0,5"/>
+
+            <!-- Botón Ver créditos -->
+            <Button Grid.Row="8" Grid.ColumnSpan="3"
+                Text="Ver créditos"
+                BackgroundColor="Purple"
+                TextColor="White"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="0,10"/>
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>
