@@ -1,131 +1,149 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Idiomas.MainPage"
-             >
+             x:Class="Idiomas.MainPage">
 
+    <!-- Estructura principal en un VerticalStackLayout -->
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Start" >
 
-        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
-          ColumnDefinitions="*, *,*" Padding="20" >
-
-            <!-- Header -->
-            <Label Grid.Row="0" Grid.ColumnSpan="3"
+        <!-- Header -->
+        <Label 
                Text="Nivel de idiomas"
                FontSize="Large"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                Padding="0,10"/>
 
-            <!-- Subheader -->
-            <Label Grid.Row="1" Grid.ColumnSpan="3"
+        <!-- Subheader -->
+        <Label 
                Text="B: bajo, M: medio, A: alto"
                FontSize="Medium"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                Padding="0,5"/>
 
-            <!-- Nivel de valenciano -->
+        <!-- Grid para el contenido de niveles de idioma -->
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+              ColumnDefinitions="200, 50,*" Padding="20">
+
+            <!-- Nivel de Valenciano -->
             <Label Grid.Row="2" Grid.Column="0"
-               Text="Nivel de valenciano [B,M,A]"
-               VerticalOptions="Center"
-                   />
+                   Text="Nivel de Valenciano [B,M,A]"
+                   VerticalOptions="Center"/>
 
-            <!-- Indicador A -->
-            <Grid Grid.Row="2" Grid.Column="1" WidthRequest="30" HeightRequest="30">
-                <BoxView Color="LightGreen"/>
-                <Label Text="A" HorizontalOptions="Center" VerticalOptions="Center"/>
-            </Grid>
+            <!-- Entry para Valenciano -->
+            <Entry x:Name="ValencianoEntry"
+                   Grid.Row="2" Grid.Column="1"
+                   WidthRequest="30" HeightRequest="30"
+                   Placeholder="A, M o B"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="White"/>
 
+            <!-- Botón Insertar para Valenciano -->
             <Button Grid.Row="2" Grid.Column="2"
-                Text="Insertar"
-                BackgroundColor="Purple" 
-                TextColor="White"
-                    Padding="5" Margin="5"/>
+                    Text="Insertar"
+                    BackgroundColor="Purple"
+                    TextColor="White"
+                    Padding="5" Margin="5"
+                   Clicked="OnInsertarValencianoClicked"/>
 
-            <!-- Nivel de inglés -->
+
+            <!-- Nivel de Inglés -->
             <Label Grid.Row="3" Grid.Column="0"
-               Text="Nivel de inglés [B,M,A]"
-               VerticalOptions="Center"/>
+                   Text="Nivel de Inglés [B,M,A]"
+                   VerticalOptions="Center"/>
 
-            <!-- Indicador B -->
-            <Grid Grid.Row="3" Grid.Column="1" WidthRequest="30" HeightRequest="30">
-                <BoxView Color="Red"/>
-                <Label Text="B" HorizontalOptions="Center" VerticalOptions="Center"/>
-            </Grid>
+            <!-- Entry para Inglés -->
+            <Entry x:Name="InglesEntry"
+                   Grid.Row="3" Grid.Column="1"
+                   WidthRequest="30" HeightRequest="30"
+                   Placeholder="A, M o B"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="White"/>
 
+            <!-- Botón Insertar para Inglés -->
             <Button Grid.Row="3" Grid.Column="2"
-                Text="Insertar"
-                BackgroundColor="Purple"
-                TextColor="White"
-                Padding="5" Margin="5"/>
+                    Text="Insertar"
+                    BackgroundColor="Purple"
+                    TextColor="White"
+                    Padding="5" Margin="5"
+                    Clicked="OnInsertarInglesClicked"/>
 
-            <!-- Nivel de francés -->
+            <!-- Nivel de Francés -->
             <Label Grid.Row="4" Grid.Column="0"
-               Text="Nivel de francés [B,M,A]"
-               VerticalOptions="Center"/>
+                   Text="Nivel de Francés [B,M,A]"
+                   VerticalOptions="Center"/>
 
-            <!-- Indicador M -->
-            <Grid Grid.Row="4" Grid.Column="1" WidthRequest="30" HeightRequest="30">
-                <BoxView Color="Orange"/>
-                <Label Text="M" HorizontalOptions="Center" VerticalOptions="Center"/>
-            </Grid>
+            <!-- Entry para Francés -->
+            <Entry x:Name="FrancesEntry"
+                   Grid.Row="4" Grid.Column="1"
+                   WidthRequest="30" HeightRequest="30"
+                   Placeholder="A, M o B"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="White"/>
 
+            <!-- Botón Insertar para Francés -->
             <Button Grid.Row="4" Grid.Column="2"
-                Text="Insertar"
-                BackgroundColor="Purple"
-                TextColor="White"
-                Padding="5" Margin="5"/>
+                    Text="Insertar"
+                    BackgroundColor="Purple"
+                    TextColor="White"
+                    Padding="5" Margin="5"
+                    Clicked="OnInsertarFrancesClicked"/>
+        </Grid>
 
-            <!-- Botón Comprobar -->
-            <Button Grid.Row="5" Grid.ColumnSpan="3"
-                Text="Comprobar"
+        <!-- Botón Comprobar -->
+        <Button Text="Comprobar"
                 BackgroundColor="Purple"
                 TextColor="White"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                Margin="20"/>
-            
-            <!-- Niveles avanzados -->
-            <Button Grid.Row="6" Grid.Column="0"
-            Text="Avanzado 1"
-            BackgroundColor="LightGray"
-            TextColor="Black"
-            HorizontalOptions="Center"
-                    />
+                Margin="20"
+                Clicked="OnComprobarClicked"/>
 
-            <Button Grid.Row="6" Grid.Column="1"
-            Text="Avanzado 2"
-            BackgroundColor="LightGray"
-            TextColor="Black"
-            HorizontalOptions="Center"
-            Margin="0,0,20,0"/> <!-- Margen derecho -->
+        <!-- Botones Avanzados en un HorizontalStackLayout -->
+        <HorizontalStackLayout Spacing="10">
+            <Button x:Name="Avanzado1Button"
+                    Text="Avanzado 1"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                    IsEnabled="False"/>
 
+            <Button x:Name="Avanzado2Button"
+                    Text="Avanzado 2"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                    IsEnabled="False"/>
 
-            <Button Grid.Row="6" Grid.Column="2"
-            Text="Avanzado 3"
-            BackgroundColor="LightGray"
-            TextColor="Black"
-            HorizontalOptions="Center"/>
+            <Button x:Name="Avanzado3Button"
+                    Text="Avanzado 3"
+                    BackgroundColor="LightGray"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                    IsEnabled="False"/>
+        </HorizontalStackLayout>
 
-
-            <!-- Texto de nivel avanzado -->
-            <Label Grid.Row="7" Grid.ColumnSpan="3"
-               Text="Idiomas a nivel avanzado = 3"
+        <!-- Texto para nivel avanzado -->
+        <Label x:Name="MensajeAvanzado"
+               Text=""
                FontSize="Medium"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               Padding="0,5"/>
+               Padding="0,5"
+               IsVisible="False"/>
 
-            <!-- Botón Ver créditos -->
-            <Button Grid.Row="8" Grid.ColumnSpan="3"
-                Text="Ver créditos"
+        <!-- Botón Ver créditos -->
+        <Button Text="Ver créditos"
                 BackgroundColor="Purple"
                 TextColor="White"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                Margin="0,10"/>
-        </Grid>
+                Margin="0,10"
+                Clicked="OnVerCreditosClicked"/>
     </VerticalStackLayout>
 
 </ContentPage>
